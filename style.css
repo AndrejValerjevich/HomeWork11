@@ -1,0 +1,110 @@
+body {
+    width: 960px;
+    margin: auto;
+    zoom: 90%;
+    font-family: "Courier New", sans-serif;
+    background-image: url("image/back.jpg");
+    background-size: cover;
+}
+
+.header-container {
+    display: block;
+    margin: auto;
+    background-image: url("image/header.jpg");
+    background-size: cover;
+    height: 250px;
+    border-radius: 0 0 110px 110px;
+    opacity: 0.9;
+}
+
+.header-container__h1__text {
+    margin: auto 20px;
+    text-align: left;
+    font-size: 4em;
+    font-weight: 600;
+    line-height: 200px;
+    color: white;
+}
+
+.header-container__h1 {
+    position: relative;
+    height: 50%;
+}
+
+.main-container {
+    height: 350px;
+    display: block;
+}
+
+.main-container-fieldset__start {
+    margin: 10px auto;
+    width: 70%;
+    border: solid #FF8247 4px;
+    border-radius: 50px;
+}
+
+.main-container-fieldset-info {
+    margin: 10px auto;
+    width: 80%;
+    border: solid #FF8247 4px;
+    border-radius: 50px;
+}
+.main-container-fieldset__start__text-high {
+    text-align: center;
+    color: #FF8247;
+    font-size: 4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.main-container-fieldset__start__pic-low {
+    text-align: center;
+    margin: 0;
+}
+
+.header-container-link {
+    color: white;
+    text-decoration: none;
+    margin: auto;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-left: 130px;
+}
+
+.header-container-link:hover {
+    color: #FF8247;
+}
+
+.main-container-table {
+    border-spacing: 5px;
+    padding: 10px;
+    margin: auto;
+}
+
+.table-row {
+    border: solid #FF8247 2px;
+    height: 2em;
+}
+
+.table-cell {
+    font-size: 1em;
+    border: solid #FF8247 2px;
+    font-weight: 800;
+    text-align: left;
+    padding: 10px 5px;
+    width: 50%;
+}
+
+.table-header {
+    text-align: center;
+}
+
+.main-container-fieldset__start__pic-arrow {
+    width: 300px;
+    height: 100px;
+    -moz-transition: all 0.6s linear;
+    -o-transition: all 0.6s linear;
+    -webkit-transition: all 0.6s linear;
+}
+.main-container-fieldset__start__pic-arrow:hover {
+    width: 500px;
+}
