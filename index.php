@@ -29,18 +29,20 @@ else
 //Автолоадеры для классов, разложенных по четырем директориям
 function productsAutoloader($className)
 {
-    $file_path = './Classes/Products/' . $className . '.class.php';
+    $file_path = './Classes/Products/' . $className . '.php';
     if (file_exists($file_path)) {
         include "$file_path";
     }
+    else echo "нет в классе ";
 }
 
 function ordersAutoloader($className)
 {
-    $file_path = './Classes/Orders/' . $className . '.class.php';
+    $file_path = './Classes/Orders/' . $className . '.php';
     if (file_exists($file_path)) {
         include "$file_path";
     }
+    else echo "нет в заказе ";
 }
 
 function exceptionsAutoloader($className)
@@ -49,6 +51,7 @@ function exceptionsAutoloader($className)
     if (file_exists($file_path)) {
         include "$file_path";
     }
+    else echo "нет в исключении";
 }
 #endregion
 

@@ -1,6 +1,7 @@
 <?php
+namespace Classes\Exceptions;
 
-class EmptyProductException extends Exception
+class EmptyProductException extends \Exception
 {
     protected $message;
 
