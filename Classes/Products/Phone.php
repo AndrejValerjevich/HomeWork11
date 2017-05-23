@@ -1,8 +1,9 @@
 <?php
 namespace Classes\Products;
 
+use Classes\Exceptions\EmptyProductException;
 
-final class Phone extends \Product
+final class Phone extends Product
 {
     protected $discount = 10;
     private $diagonal;
@@ -12,13 +13,15 @@ final class Phone extends \Product
     {
         try {
             if ($id_product == null) {
-                throw new \Classes\Exceptions\EmptyProductException('Empty id_product.');
+                throw new EmptyProductException('Empty id_product.');
             }
-            parent::__construct($id_product, $category, $name, $weight, $price);
-            $this->diagonal = $diagonal;
-            $this->camera = $camera;
+            else {
+                parent::__construct($id_product, $category, $name, $weight, $price);
+                $this->diagonal = $diagonal;
+                $this->camera = $camera;
+            }
         }
-        catch (\Classes\Exceptions\EmptyProductException $e) {
+        catch (EmptyProductException $e) {
             echo 'Вы забыли заполнить поле id товара!';
         }
     }

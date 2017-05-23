@@ -1,5 +1,8 @@
 <?php
 namespace Classes\Products;
+
+use Interfaces\DefinedProduct;
+use Traits\WorkWithPrice;
 /*require_once 'Interfaces/DefinedProduct.php';
 require_once 'Traits/WorkWithPrice.php';*/
 

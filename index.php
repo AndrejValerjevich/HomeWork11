@@ -1,4 +1,10 @@
 <?php
+use Classes\Products\Phone;
+use Classes\Products\Laptop;
+use Classes\Products\Freezer;
+
+use Classes\Orders\Basket;
+use Classes\Orders\Order;
 /*
  * Код данной страницы в виду недостатка времени написан просто листингом, подряд, страница не интерактивна.
  * Однако, все аспекты домашнего затания в коде присутствуют и могут быть преобразованы в рабочий сайт:)
@@ -25,39 +31,18 @@ else
 }
 #endregion
 
-#region //Функции автолоада
-//Автолоадеры для классов, разложенных по четырем директориям
-function productsAutoloader($className)
+#region //Автолоадер
+function Autoloader($className)
 {
-    $file_path = './Classes/Products/' . $className . '.php';
+    $file_path = $className . '.php';
     if (file_exists($file_path)) {
         include "$file_path";
     }
     else echo "нет в классе ";
 }
-
-function ordersAutoloader($className)
-{
-    $file_path = './Classes/Orders/' . $className . '.php';
-    if (file_exists($file_path)) {
-        include "$file_path";
-    }
-    else echo "нет в заказе ";
-}
-
-function exceptionsAutoloader($className)
-{
-    $file_path = './Classes/Exceptions/' . $className . '.php';
-    if (file_exists($file_path)) {
-        include "$file_path";
-    }
-    else echo "нет в исключении";
-}
 #endregion
 
-spl_autoload_register('productsAutoloader');
-spl_autoload_register('ordersAutoloader');
-spl_autoload_register('exceptionsAutoloader');
+spl_autoload_register('Autoloader');
 
 #region //Работа с товарами
 //Здесь мы просто создадим 4 объекта наших классов
@@ -76,7 +61,7 @@ $small_freezer = new Freezer(444,'Freezers', 'Samsung S456HG', 8, 30000, 'Бел
 $product_array[] = $small_freezer;
 #endregion
 
-#region //Работа с исключениями
+#region //Работа с исключениями - исходно оно генерируется на экране, далее можно изменить:)
 //Переменные далее - это могут быть поля формы, и если не заполнить поле id - мы получим исключение!
 
 $id_product = '';//(если внести любой id товара - он добавится в список и выведется на экран:))
