@@ -34,6 +34,8 @@ else
 #region //Автолоадер
 function Autoloader($className)
 {
+    str_replace('\\',DIRECTORY_SEPARATOR,$className);
+    var_dump($className);
     $file_path = $className . '.php';
     if (file_exists($file_path)) {
         include "$file_path";
