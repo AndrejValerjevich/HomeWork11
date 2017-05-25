@@ -34,9 +34,8 @@ else
 #region //Автолоадер
 function Autoloader($className)
 {
-    str_replace('\\',DIRECTORY_SEPARATOR,$className);
-    var_dump($className);
-    $file_path = $className . '.php';
+    $path = str_replace('\\',DIRECTORY_SEPARATOR,$className);
+    $file_path = $path . '.php';
     if (file_exists($file_path)) {
         include "$file_path";
     }
@@ -66,7 +65,7 @@ $product_array[] = $small_freezer;
 #region //Работа с исключениями - исходно оно генерируется на экране, далее можно изменить:)
 //Переменные далее - это могут быть поля формы, и если не заполнить поле id - мы получим исключение!
 
-$id_product = '';//(если внести любой id товара - он добавится в список и выведется на экран:))
+$id_product = '555';//если оставить пустым '', как например, если при вводе забудут ввести id - выведется исключение)
 $category = 'Phones';
 $name = 'Samsung Galaxy S8';
 $weight = 0.2;
